@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<conio.h>
-#define MAX 10
+#define MAX 5
 
-int front=-1,rear=-1;
+int front=1,rear=1;
 
 int q[MAX];
 void enqueue()
@@ -10,30 +10,28 @@ void enqueue()
     int value;
     printf("enter value \n");
     scanf("%d",&value);
-    if(rear==MAX-1)
-    printf("no element can be inserted,due to queue overflow");
-    else
-    {
+    
+    
       if (front==-1)
           front=0;
      rear=rear+1;
      q[rear]=value;
      printf("%d is inserted",q[rear]);
+    
     }
-}
 
 
 void dequeue()
 {
     int temp;
-    if(front==-1||front>rear)
+    if(front==1||front>rear)
       printf("the queue is empty no element can be dequeued");
 
 
     else if (front>rear)
      {
-        front=-1;
-        rear=-1;
+        front=1;
+        rear=1;
      }
 
     else 
@@ -48,7 +46,7 @@ void dequeue()
 void peek()
 {
     int value1;
-     if(front==-1||front>rear)
+     if(front==1||front>rear)
       printf("the queue is empty no element can be dequeued");
 
      else
