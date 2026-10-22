@@ -1,7 +1,8 @@
 
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int a[100], n, i, key;
     int low, high, mid, found;
 
@@ -15,7 +16,7 @@ int main() {
     printf("Enter element to search: ");
     scanf("%d", &key);
 
-    // Linear Search
+    
     found = 0;
     for (i = 0; i < n; i++) {
         if (a[i] == key) {
@@ -28,7 +29,7 @@ int main() {
     if (!found)
         printf("Linear Search: Element not found\n");
 
-    // Binary Search
+    
     low = 0;
     high = n - 1;
     found = 0;
