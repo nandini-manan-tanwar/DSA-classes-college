@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node {
+struct node 
+{
     int data;
     struct node *next;
 };
 
 struct node *head = NULL;
 
-void insert() {
+void insert() 
+{
     struct node *newnode, *temp;
     newnode = (struct node *)malloc(sizeof(struct node));
 
@@ -26,7 +28,8 @@ void insert() {
     }
 }
 
-void traverse() {
+void traverse() 
+{
     struct node *temp = head;
 
     if (head == NULL) {
@@ -41,7 +44,8 @@ void traverse() {
     printf("NULL\n");
 }
 
-void delete() {
+void delete() 
+{
     struct node *temp;
 
     if (head == NULL) {
@@ -56,7 +60,8 @@ void delete() {
     printf("First node deleted\n");
 }
 
-int main() {
+int main() 
+{
     int choice;
 
     while (1) {

@@ -49,13 +49,79 @@ void searching_node()
 
     }
    if (LOC==NULL)
-   printf("item not found");
+   printf("item not found\n");
    else
-   printf("item found at %d",LOC);
+   printf("item found at %d\n",LOC);
 }
+
+
+void insert_begin()
+{
+struct node *new;
+new=(struct node*)malloc(sizeof(struct node));
+if (new==NULL)
+{
+    printf("overflow of memory\n");
+    return;
+}
+int ITEM;
+printf("enter data to be stored in first node\n");
+scanf("%d",&ITEM);
+new->data=ITEM,new->next=head;
+head=new;
+struct node *temp = head; 
+    printf("new node=");   
+    while (temp != NULL) 
+    {
+        printf(" %d", temp->data);
+        temp = temp->next;
+    }
+}
+
+void insert_lastnode()
+{
+    printf("\n");
+    struct node *new;
+new=(struct node*)malloc(sizeof(struct node));
+if (new==NULL)
+{
+    printf("overflow of memory\n");
+    return;
+}
+int ITEM;
+printf("enter data to be stored in last node\n");
+scanf("%d",&ITEM);
+new->data=ITEM;
+if (head==NULL)
+       { 
+        head=new ;
+        printf("nope wrong");
+        return;
+       }
+
+  struct node *temp = head; 
+    while (temp->next!= NULL) 
+    {
+        temp=temp->next;
+    }
+    temp->next=new;
+    struct node *ptr = head; 
+    printf("new node=");   
+    do
+    {
+        printf(" %d", ptr->data);
+        ptr = ptr->next;
+    }while (ptr!=NULL);
+   
+}
+
+
+
 int main()
 {
     node_making();
     printing_node();
     searching_node();
+    insert_begin();
+    insert_lastnode();
 }

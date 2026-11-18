@@ -1,55 +1,72 @@
-// WAP to perform Push, Pop, Peek, Display, isFull and isEmpty
 #include <stdio.h>
 #define MAX 5
 
 int stack[MAX];
 int top = -1;
 
-// Check if stack is full
-int isFull() {
+
+int isFull() 
+{
     return (top == MAX - 1);
 }
 
-// Check if stack is empty
-int isEmpty() {
+
+int isEmpty() 
+{
     return (top == -1);
 }
 
-// Push operation
-void push(int value) {
-    if (isFull()) {
+
+void push(int value) 
+{
+    if (isFull()) 
+    {
         printf("Stack Overflow\n");
-    } else {
+    } 
+    else 
+    {
         top++;
         stack[top] = value;
         printf("%d pushed into stack\n", value);
     }
 }
 
-// Pop operation
-void pop() {
-    if (isEmpty()) {
+
+void pop() 
+{
+    if (isEmpty()) 
+    {
         printf("Stack Underflow\n");
-    } else {
+    } 
+    
+    else 
+    {
         printf("%d popped from stack\n", stack[top]);
         top--;
     }
 }
 
-// Peek operation
-void peek() {
-    if (isEmpty()) {
+
+void peek() 
+{
+    if (isEmpty()) 
+    {
         printf("Stack is empty\n");
-    } else {
+    } else 
+    {
         printf("Top element = %d\n", stack[top]);
     }
 }
 
-// Display operation
-void display() {
-    if (isEmpty()) {
+
+void display() 
+{
+    if (isEmpty()) 
+    {
         printf("Stack is empty\n");
-    } else {
+    } 
+    else 
+    {
         printf("Stack elements: ");
         for (int i = top; i >= 0; i--)
             printf("%d ", stack[i]);
